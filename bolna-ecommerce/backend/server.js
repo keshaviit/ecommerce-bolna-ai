@@ -10,15 +10,16 @@ const bolnaRoutes = require('./routes/bolnaRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-console.log("ENV:", import.meta.env);
-console.log("API:", import.meta.env.VITE_BACKEND_URL);
+console.log("ENV:", process.env.NODE_ENV);
+// backend doesn't need VITE_BACKEND_URL usually, but let's log PORT just in case
+console.log("PORT:", process.env.PORT);
 
 const corsOptions = {
     origin: [
         'http://localhost:5173', // Vite default local port
         'http://localhost:3000', // React default local port
         process.env.FRONTEND_URL // Production frontend URl
-        ,"https://bolna-ai-app1-g9z1c46qq-keshaviits-projects.vercel.app"
+        , "https://bolna-ai-app1-g9z1c46qq-keshaviits-projects.vercel.app"
     ],
     credentials: true,
     optionsSuccessStatus: 200
