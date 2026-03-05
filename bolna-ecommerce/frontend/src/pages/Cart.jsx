@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useCart } from '../context/CartContext';
 import { Trash2, ShoppingBag, ArrowRight } from 'lucide-react';
 
-const API_URL = "https://bolna-ai-app1.onrender.com";
+const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 export default function Cart() {
     const { cart, removeFromCart, updateQuantity, getCartTotal, clearCart } = useCart();

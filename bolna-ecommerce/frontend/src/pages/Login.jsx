@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Lock, Mail, AlertCircle } from 'lucide-react';
 
-const API_URL = "https://bolna-ai-app1.onrender.com";
+const API_URL = import.meta.env.VITE_BACKEND_URL;
 console.log(API_URL);
 
 export default function Login() {

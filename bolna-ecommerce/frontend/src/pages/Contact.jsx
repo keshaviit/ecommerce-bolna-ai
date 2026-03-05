@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Mail, User, MessageSquare, Send, CheckCircle } from 'lucide-react';
 
-const API_URL = "https://bolna-ai-app1.onrender.com";
+const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 export default function Contact() {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });

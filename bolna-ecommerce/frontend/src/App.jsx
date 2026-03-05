@@ -4,7 +4,6 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import VerifyEmail from './pages/VerifyEmail';
 import Contact from './pages/Contact';
 import Cart from './pages/Cart';
 import Orders from './pages/Orders';
@@ -21,7 +20,6 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-              <Route path="/verify-email/:token" element={<VerifyEmail />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/orders" element={<Orders />} />
@@ -34,7 +32,7 @@ function App() {
         </div>
       </CartProvider>
     </Router>
-    
+
   );
 }
 console.log("API URL:", import.meta.env.VITE_BACKEND_URL);

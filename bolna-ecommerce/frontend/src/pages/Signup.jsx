@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { User, Mail, Lock, CheckCircle, AlertCircle } from 'lucide-react';
 
-const API_URL = "https://bolna-ai-app1.onrender.com";
+const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 export default function Signup() {
     const [formData, setFormData] = useState({ name: '', email: '', password: '' });
@@ -17,7 +17,7 @@ export default function Signup() {
 
         try {
             const { data } = await axios.post(`${API_URL}/api/auth/signup`, formData);
-            setStatus({ type: 'success', message: data.message || 'Signup successful! Please check your email to verify your account.' });
+            setStatus({ type: 'success', message: data.message || 'Signup successful! You can now log in.' });
             setFormData({ name: '', email: '', password: '' });
         } catch (err) {
             setStatus({ type: 'error', message: err.response?.data?.message || 'An error occurred during registration.' });

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Package, Calendar, MapPin, PhoneCall, X } from 'lucide-react';
 
-const API_URL = "https://bolna-ai-app1.onrender.com";
+const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 export default function Orders() {
     const [orders, setOrders] = useState([]);
